@@ -1,0 +1,24 @@
+.container {
+    position: relative;
+    background-color: inherit;
+  }
+  
+  .content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    width: 100px;
+    background: var(--light-color);
+    color: var(--dark-color);
+    padding: 4px;
+    border-radius: 4px;
+    top: 75%;
+    right: 50%;
+  }
+  
+  .trigger:hover + .content,
+  .content:hover {
+    display: block;
+  }
+  

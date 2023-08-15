@@ -1,0 +1,132 @@
+.eventsWrapper {
+    width: 100%;
+    overflow: auto;
+}
+
+.eventsWrapper::before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 24px);
+    height: 32px;
+    z-index: 1;
+    box-shadow: 
+        inset 0px 32px 16px -16px var(--dark-color); 
+}
+
+.eventsWrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 48px;
+    width: calc(100% - 24px);
+    height: 64px;
+    box-shadow: inset 0px -64px 32px -32px var(--dark-color); 
+}
+
+.eventsWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.events {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.events::-webkit-scrollbar {
+    display: none;
+}
+
+.event {
+    display: flex;
+    width: 100%;
+}
+
+.timeLine {
+    width: 2px;
+    height: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: var(--light-color);
+}
+
+.eventData {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    padding-top: 12px;
+    border-bottom: 1px solid rgba(51, 62, 83, 0.5);
+}
+
+.eventTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family: 'Verdana-Bold', sans-serif;
+}
+
+.eventInfo {
+    display: flex;
+    gap: 12px;
+}
+
+.eventExtra {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.eventTime {
+    width: 180px;
+}
+
+.eventLocation {
+    flex: 1;
+}
+
+.eventTime, .eventLocation {
+    font-size: 16px;
+    line-height: 20px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.eventIcon {
+    height: 18px;
+    width: 18px;
+}
+
+@media (max-width: 912px) {
+    .eventsWrapper::before {
+        display: none;
+    }
+    .eventsWrapper::after {
+        display: none;
+    }
+    .eventTitle {
+        font-size: 16px;
+        line-height: 17px;
+        margin-bottom: 6px;
+    }
+
+    .eventTime, .eventLocation {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .eventData {
+        border-bottom: 1px solid var(--dark-color);
+    }
+}
+
+@media (max-width: 540px) {
+    .eventInfo {
+        flex-direction: column;
+    }
+
+    .eventTime, .eventLocation {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}

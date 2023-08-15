@@ -1,0 +1,27 @@
+.calendar{
+    flex: 2;
+    background-color: var(--dark-color);
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media (max-width: 912px) {
+    .calendar{
+        overflow: auto;
+        background-color: var(--gray-color);
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+
+
+@media (max-width: 540px) {
+    .calendar{
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+}

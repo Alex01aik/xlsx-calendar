@@ -1,0 +1,13 @@
+# Ignore built files
+build/
+
+# Ignore third-party libraries
+node_modules/
+
+# Ignore generated files
+dist/
+coverage/
+
+# Ignore specific files
+*.config.js
+*.json

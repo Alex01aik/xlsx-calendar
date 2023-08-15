@@ -1,0 +1,128 @@
+.root {
+  background-color: var(--gray-color);
+  position: absolute;
+  top: 56px;
+  z-index: 100;
+  border-radius: 6px;
+  height: 50vh;
+  max-height: 250px;
+  width: 340px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendarCategoriesWrapper {
+  display: flex;
+  overflow: hidden;
+}
+
+.calendarCategories {
+  overflow: auto;
+}
+
+.calendarCategories::-webkit-scrollbar {
+  display: none;
+}
+
+.calendarCategory {
+  padding: 10px 21px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.calendarCategoryCheckbox {
+  -webkit-appearance: none;
+  appearance: none;
+  
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checked {
+  background-color: var(--light-color);
+  border: 1px solid var(--light-color);
+}
+
+.checked::before {
+  content: '✔';
+  font-size: 10px;
+  line-height: 10px;
+  color: var(--white-color);
+
+}
+
+.calendarCategoryText {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  gap: 56px;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  align-items: center;
+  width: 80px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button:hover {
+  opacity: 0.75;
+}
+
+.cancelButton {
+  background-color: inherit;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+  border-radius: 6px;
+}
+
+.saveButton {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border: none;
+  border-radius: 6px;
+}
+
+@media (max-width: 912px) {
+  .buttons {
+    gap: 24px;
+  }
+  .button {
+    font-size: 12px;
+    line-height: 14px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 540px) {
+  .root {
+      max-width: 212px;
+      max-height: 232px;
+  }
+}

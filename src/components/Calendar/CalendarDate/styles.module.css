@@ -1,0 +1,78 @@
+.eventDateWrapper {
+    display: flex;
+    position: relative;
+}
+
+.eventDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.eventDateMonth {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.eventDateDate {
+    display: block;
+    font-size: 38px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timeLine {
+    width: 2px;
+    height: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first {
+    margin-top: 24px;
+    height: calc(100% - 24px);
+}
+
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--light-color);
+    position: absolute;
+    left: 50px;
+    top: 24px;
+
+}
+
+@media (max-width: 912px) {
+    .eventDateMonth {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .eventDateDate {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 540px) {
+    .eventDateMonth {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .eventDateDate {
+        font-size: 32px;
+    }
+}
