@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
-import plane from '../../../assets/images/plane.svg';
+// import plane from '../../../assets/images/plane.svg'; TODO when realise chat support
 import search from '../../../assets/images/search.svg';
 
 export type SearchInputProps = {
@@ -8,6 +8,7 @@ export type SearchInputProps = {
 };
 
 const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
+  const placeholder: string = 'Search by event, group or keyword';
   const [value, setValue] = useState<string>('');
   const [height, setHeight] = useState<number>(0);
   const textareaRef = useRef<any>(null);
@@ -22,6 +23,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
 
   useEffect(() => {
     setHeight(textareaRef.current.scrollHeight);
+    adjustTextareaHeight();
   }, []);
 
   const resetTextareaHeight = () => {
@@ -41,12 +43,13 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
     <div className={styles.search}>
       <img src={search} className={styles.searchIcon} />
       <textarea
+        placeholder={placeholder}
         ref={textareaRef}
         className={styles.input}
-        placeholder="When is ..."
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          onSearch(e.target.value);
           adjustTextareaHeight();
         }}
         onKeyDown={(e) => {
@@ -57,11 +60,12 @@ const SearchInput: React.FC<SearchInputProps> = ({ onSearch }) => {
         }}
         rows={Math.max(1, value.split('\n').length)}
       />
-      <img
+      {/* TODO when realise chat support */}
+      {/* <img
         className={`${styles.searchIcon} ${styles.searchButton}`}
         src={plane}
         onClick={searchHandler}
-      />
+      /> */}
     </div>
   );
 };

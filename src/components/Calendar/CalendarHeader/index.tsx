@@ -6,11 +6,9 @@ import styles from './styles.module.css';
 import CalendarCategories from '../CalendarCategories';
 import BetaComponent from '../../BetaComponent';
 
-export type CalendarHeaderProps = {
-  categories?: string[];
-};
+export type CalendarHeaderProps = {};
 
-const CalendarHeader: React.FC<CalendarHeaderProps> = ({ categories }) => {
+const CalendarHeader: React.FC<CalendarHeaderProps> = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   return (
     <>
@@ -23,9 +21,7 @@ const CalendarHeader: React.FC<CalendarHeaderProps> = ({ categories }) => {
           <p className={styles.calendarFilterTitle}>Calendars</p>
           <img src={dropdown} className={isOpened ? styles.open : ''} />
         </div>
-        {isOpened && (
-          <CalendarCategories categories={categories} close={() => setIsOpened(false)} />
-        )}
+        {isOpened && <CalendarCategories close={() => setIsOpened(false)} />}
         <BetaComponent>
           <img src={setting} className={`${styles.calendarIcon} ${styles.settings}`} />
         </BetaComponent>

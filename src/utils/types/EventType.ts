@@ -1,6 +1,7 @@
 export type EventType = {
   address: string;
-  category: string;
+  organization: string;
+  subOrganization: string;
   cost?: string;
   date: string;
   description?: string;

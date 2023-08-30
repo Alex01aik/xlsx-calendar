@@ -55,7 +55,7 @@
 }
 
 .cover {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: var(--dark-color);
@@ -72,6 +72,11 @@
 }
 
 @media (max-width: 540px) {
+    .calendarHeader{
+        padding: 0;
+        padding-top: 6px;
+    }
+
     .calendarFilter {
         width: 212px;
     }

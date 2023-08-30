@@ -13,16 +13,76 @@
 }
 
 .calendarCategoriesWrapper {
+  width: 100%;
   display: flex;
   overflow: hidden;
 }
 
+.selectAllPanel {
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+  gap: 12px;
+}
+
+.selectAllInput {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.selectAllCheckbox {
+  -webkit-appearance: none;
+  appearance: none;
+  
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+  border: 1px solid var(--white-color);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .calendarCategories {
+  width: 100%;
   overflow: auto;
+  padding-bottom: 64px;
+}
+
+.calendarCategoryList {
+  padding-left: 32px;
 }
 
 .calendarCategories::-webkit-scrollbar {
   display: none;
+}
+
+.dropdownCategory {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownCategoryLabel {
+  display: flex;
+  padding: 8px 16px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.dropdownCategoryLabel:hover {
+  opacity: 0.75;
+}
+.dropdownCategoryLabel:active {
+  opacity: 0.5;
 }
 
 .calendarCategory {
@@ -67,6 +127,7 @@
 .calendarCategoryText {
   display: flex;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 .buttons {
@@ -77,6 +138,10 @@
   padding-top: 16px;
   padding-bottom: 16px;
   gap: 56px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--gray-color);
 }
 
 .button {
@@ -109,6 +174,10 @@
   border-radius: 6px;
 }
 
+.open {
+  rotate: 180deg;
+}
+
 @media (max-width: 912px) {
   .buttons {
     gap: 24px;
@@ -124,5 +193,17 @@
   .root {
       max-width: 212px;
       max-height: 232px;
+  }
+
+  .calendarCategoryList {
+    padding-left: 8px;
+  }
+
+  .calendarCategory {
+    padding: 4px 16px;
+  }
+
+  .calendarCategoryText {
+    font-size: 14px;
   }
 }

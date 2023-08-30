@@ -1,7 +1,3 @@
-.headerWrapper {
-  padding-bottom: 24px;
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -12,53 +8,99 @@
 }
 
 .mainTitle {
-  color: var(--light-color);
-  font-size: 32;
+  font-size: 34px;
   font-weight: 700;
-  cursor: default;
-  font-family: 'Verdana-Bold', sans-serif;
+  font-family: 'Bowlby', sans-serif;
+  letter-spacing: 4px;
+  -webkit-text-fill-color: var(--gray-color);
+  -webkit-text-stroke-color:var(--light-color);
+  -webkit-text-stroke-width: 1.2px;
 }
 
 .subTitle {
-  font-size: 15;
+  font-size: 18px;
   font-weight: 400;
   cursor: default;
   font-family: 'Montserrat', sans-serif;
 }
 
-.profile {
-  height: 41px;
-  width: 41px;
+.navigation {
+  display: flex;
+  gap: 32px;
+}
+
+.navMenu {
+  display: none;
   cursor: pointer;
 }
 
-.profile:hover {
+.navMenu:hover {
   opacity: 0.75;
 }
 
-.profile:active {
+.navMenu:active {
   opacity: 0.5;
 }
 
+.navLink {
+  color: var(--white-color);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.coverNavigation {
+  background-color: var(--gray-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 26px;
+  align-items: center;
+  ;
+}
+
+.coverNavLink {
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: 'Verdana-Bold', sans-serif;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--dark-color);
+}
+
 @media (max-width: 912px) {
-  .headerWrapper {
+  .header {
     padding-top: 34px;
     padding-left: 100px;
     padding-right: 100px;
     background-color: var(--dark-color);
+    margin-bottom: 0;
+    border-bottom: none;
   }
 
-  .header {
-    padding-bottom: 0;
-    border-bottom: none;
+  .mainTitle {
+    -webkit-text-fill-color: var(--dark-color);
   }
 }
 
 @media (max-width: 540px) {
-  .headerWrapper {
+  .header {
       padding-left: 26px;
       padding-right: 26px;
-      padding-bottom: 24px;
-      padding-top: 32px;
+      padding-bottom: 12px;
+      padding-top: 12px;
+  }
+
+  .headerNavigation {
+    display: none;
+  }
+
+  .navMenu {
+    display: flex;
   }
 }

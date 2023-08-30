@@ -6,6 +6,7 @@
 .eventsWrapper::before {
     content: '';
     position: absolute;
+    top: 64px;
     width: calc(100% - 24px);
     height: 32px;
     z-index: 1;
@@ -41,6 +42,7 @@
 .event {
     display: flex;
     width: 100%;
+    cursor: pointer;
 }
 
 .timeLine {
@@ -123,10 +125,16 @@
 @media (max-width: 540px) {
     .eventInfo {
         flex-direction: column;
+        gap: 6px;
     }
 
     .eventTime, .eventLocation {
         font-size: 12px;
         line-height: 14px;
+    }
+
+    .eventData {
+        padding-bottom: 6px;
+        padding-top: 6px;
     }
 }

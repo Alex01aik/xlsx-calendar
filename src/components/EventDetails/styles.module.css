@@ -1,0 +1,137 @@
+.root {
+  width: 571px;
+  max-width: 90vw;
+  border-radius: 30px;
+  
+  color: var(--dark-color);
+  background: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 194px;
+    background: url(../../assets/images/pic.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.close {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     height: 24px;
+     width: 24px;
+     cursor: pointer;
+}
+
+.close:hover {
+    opacity: 0.75;
+}
+
+.close:active {
+     opacity: 0.5;
+}
+
+.main {
+    padding: 16px 32px;
+    background: var(--white-color);
+    
+}
+
+.date {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.title {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    font-family: 'Verdana', sans-serif;
+    margin-bottom: 12px;
+}
+
+.info {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.description {
+    display: block;
+}
+
+.extra {
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.extraItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.extraText {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.eventIcon {
+    height: 14px;
+    width: 14px;
+}
+
+.point {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--light-color);
+}
+
+.orgPoint {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--light-color);
+}
+
+.orgs {
+    padding-top: 8px;
+    border-top: 1px solid rgba(147, 130, 127, 0.3);
+}
+
+@media (max-width: 540px) {
+    .root {
+        width: 326px;
+    }
+
+    .main {
+        padding: 10px 12px;
+    }
+
+    .extra {
+        padding: 16px 12px;
+    }
+}

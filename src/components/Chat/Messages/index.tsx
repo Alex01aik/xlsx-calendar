@@ -22,7 +22,7 @@ const Messages: React.FC<MessagesProps> = ({ messages }) => {
   return (
     <>
       <img
-        className={`${styles.dropdown} ${isShowMessages ? styles.opened : ''}`}
+        className={`${styles.dropdown} ${isShowMessages ? styles.open : ''}`}
         src={dropdown}
         onClick={() => setIsShowMessages(!isShowMessages)}
       />
@@ -32,7 +32,7 @@ const Messages: React.FC<MessagesProps> = ({ messages }) => {
             <div
               key={index}
               className={`${styles.message} ${
-                item.author === MessageAuthor.Whensy ? styles.left : styles.right
+                item.author === MessageAuthor.CALENDAR ? styles.left : styles.right
               }`}
             >
               <div className={styles.messageBody}>{item.message}</div>

@@ -4,22 +4,38 @@ import clock from '../../../assets/images/clock.svg';
 import location from '../../../assets/images/location.svg';
 import { CalendarDate } from '../CalendarDate';
 import { EventType } from '../../../utils/types/EventType';
+import { useModal } from '../../../utils/modal/useModal';
+import { observer } from 'mobx-react';
+import EventDetails from '../../EventDetails';
 
 export type CalendarBodyProps = {
   events: EventType[];
+  isRunTopScroll?: boolean;
 };
 
-const CalendarBody: React.FC<CalendarBodyProps> = ({ events }) => {
+const CalendarBody: React.FC<CalendarBodyProps> = ({ events, isRunTopScroll }) => {
   const eventsRef = useRef<any>(null);
+  const modalManager = useModal();
+
+  const scrollToTop = () => {
+    if (eventsRef.current) {
+      eventsRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
-    eventsRef.current.scrollTop = eventsRef.current.scrollHeight;
-  }, [events]);
+    scrollToTop();
+  }, [isRunTopScroll]);
 
   return (
-    <div className={styles.eventsWrapper}>
-      <div className={styles.events} ref={eventsRef}>
+    <div className={styles.eventsWrapper} ref={eventsRef}>
+      <div className={styles.events}>
         {events.map((item, index) => (
-          <div key={index} className={styles.event}>
+          <div
+            key={index}
+            className={styles.event}
+            onClick={() => modalManager.open(<EventDetails event={item} />)}
+          >
             <CalendarDate
               date={item.date}
               isFirst={index === 0}
@@ -34,7 +50,7 @@ const CalendarBody: React.FC<CalendarBodyProps> = ({ events }) => {
                 </div>
                 <div className={`${styles.eventLocation} ${styles.eventExtra}`}>
                   <img src={location} className={styles.eventIcon} />
-                  {item.address}
+                  {item.address.split(',', 1)}
                 </div>
               </div>
             </div>
@@ -45,4 +61,4 @@ const CalendarBody: React.FC<CalendarBodyProps> = ({ events }) => {
   );
 };
 
-export default CalendarBody;
+export default observer(CalendarBody);

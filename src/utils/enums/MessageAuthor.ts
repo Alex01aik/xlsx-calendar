@@ -1,4 +1,4 @@
 export enum MessageAuthor {
   You = 'You',
-  Whensy = 'Whensy',
+  CALENDAR = 'CALENDAR',
 }

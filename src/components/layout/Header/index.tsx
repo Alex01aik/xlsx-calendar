@@ -1,24 +1,30 @@
 import React from 'react';
 import styles from './styles.module.css';
-import profile from '../../../assets/images/profile.svg';
-import DateWeatherPanel from '../../DateWeatherPanel';
-import BetaComponent from '../../BetaComponent';
+import { Link } from 'react-router-dom';
+import HeaderNavigation from '../navigation/HeaderNavigation';
 
-export type HeaderProps = {};
+export type HeaderProps = {
+  isCloseNav: boolean;
+  setIsCloseNav: React.Dispatch<React.SetStateAction<boolean>>;
+  runScroll: () => void;
+};
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ isCloseNav, setIsCloseNav, runScroll }) => {
   return (
-    <header className={styles.headerWrapper}>
-      <div className={styles.header}>
-        <div>
-          <h1 className={styles.mainTitle}>Whensy</h1>
-          <h2 className={styles.subTitle}>of Moorestown</h2>
-        </div>
-        <BetaComponent>
-          <img className={styles.profile} src={profile} alt="profile" />
-        </BetaComponent>
+    <header className={styles.header}>
+      <div>
+        <Link
+          to="/"
+          onClick={() => {
+            runScroll();
+            setIsCloseNav(true);
+          }}
+        >
+          <h1 className={styles.mainTitle}>CALENDAR</h1>
+        </Link>
+        <h2 className={styles.subTitle}>OF ALEX01AIK</h2>
       </div>
-      <DateWeatherPanel />
+      <HeaderNavigation isCloseNav={isCloseNav} setIsCloseNav={setIsCloseNav} />
     </header>
   );
 };

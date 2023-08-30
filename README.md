@@ -14,6 +14,11 @@ If you set
 it is nesessary to set path to server
 ### `REACT_APP_DATA_URL=http://localhost:5000/`
 
+Next set true values of your Emailjs service:
+### `REACT_APP_EMAILJS_SERVICE_ID=YOUR_EMAILJS_SERVICE_ID`
+### `REACT_APP_EMAILJS_TEMPLATE_ID=YOUR_EMAILJS_TEMPLATE_ID`
+### `REACT_APP_EMAILJS_API_KEY=YOUR_EMAILJS_API_KEY`
+
 # Getting Started
 
 In the project directory, you can run:

@@ -1,0 +1,37 @@
+.navigation {
+  display: flex;
+  gap: 32px;
+}
+
+.navMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.navMenu:hover {
+  opacity: 0.75;
+}
+
+.navMenu:active {
+  opacity: 0.5;
+}
+
+.navLink {
+  color: var(--white-color);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+@media (max-width: 540px) {
+  .headerNavigation {
+    display: none;
+  }
+
+  .navMenu {
+    display: flex;
+  }
+}

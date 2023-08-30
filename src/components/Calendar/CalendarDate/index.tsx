@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
+import { formatDate } from '../../../utils/funcs/formatDate';
 
 export type CalendarDateProps = {
   date: string;
@@ -8,13 +9,6 @@ export type CalendarDateProps = {
 };
 
 export const CalendarDate: React.FC<CalendarDateProps> = ({ date, isFirst, isCurrentDay }) => {
-  const formatDate = (date: string) => {
-    const [monthDate] = date.split(',', 1);
-    const [month, dayDate] = monthDate.split(' ', 2);
-
-    return [month.toUpperCase().slice(0, 3), dayDate];
-  };
-
   const [month, dayDate] = formatDate(date);
 
   return (
@@ -22,7 +16,7 @@ export const CalendarDate: React.FC<CalendarDateProps> = ({ date, isFirst, isCur
       <div className={styles.eventDate}>
         {!isCurrentDay && (
           <>
-            <span className={styles.eventDateMonth}>{month}</span>
+            <span className={styles.eventDateMonth}>{month.toUpperCase().slice(0, 3)}</span>
             <span className={styles.eventDateDate}>{dayDate}</span>
           </>
         )}
